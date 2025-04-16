@@ -1,0 +1,179 @@
+/* Поиск сверху */
+.search-bar {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.search-bar input[type="text"] {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #42ff91;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #37cc77;
+}
+
+/* Карточки товара (основная часть) */
+.product-list {
+  flex: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Отступ между карточками */
+  padding: 20px;
+}
+
+.product-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(25% - 15px); /* 4 карточки в ряд (25% ширины минус отступы) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px; /* Внутренний отступ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Равномерное распределение содержимого */
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px; /* Увеличиваем высоту изображения */
+  object-fit: cover; /* Обрезаем изображение, чтобы оно заполняло контейнер */
+  border-radius: 10px 10px 0 0; /* Скругление углов только сверху */
+}
+
+.product-item h2 {
+  font-size: 0.9rem; /* Размер заголовка */
+  margin: 10px 0;
+  color: #333;
+  flex-grow: 1; /* Заголовок занимает доступное пространство */
+}
+
+.product-item p {
+  font-size: 0.8rem; /* Размер текста */
+  color: #666;
+  padding: 0 10px;
+  margin: 0;
+  flex-grow: 1; /* Описание занимает доступное пространство */
+}
+
+.product-item .price {
+  font-size: 0.9rem; /* Размер цены */
+  color: #000000;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Стили для кнопок в карточке */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.actions .btn {
+  width: 60%;
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  background-color: #42ff91;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions .btn:hover {
+  background-color: #37cc77;
+}
+
+.add-to-cart-btn {
+  background-color: #42ff91;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #37cc77;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .product-item {
+    width: calc(33.333% - 15px); /* 3 карточки в ряд на планшетах */
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-container {
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+    position: static;
+  }
+
+  .product-item {
+    width: calc(50% - 15px); /* 2 карточки в ряд на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: 100%; /* 1 карточка в ряд на очень маленьких экранах */
+  }
+}
+.product-item img {
+  width: 100%;
+  height: 250px; /* Еще больше высота */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+/* Стили для кнопки "Аккаунт" */
+.navbar .login-btn {
+  padding: 10px 20px; /* Внутренние отступы */
+  background-color: #42ff91; /* Цвет фона */
+  color: white; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  border-radius: 5px; /* Скругленные углы */
+  display: inline-block; /* Для выравнивания кнопок рядом */
+  transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+}
+
+/* Эффект при наведении для кнопки "Аккаунт" */
+.navbar .login-btn:hover {
+  background-color: #37cc77; /* Цвет фона при наведении */
+}
