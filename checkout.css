@@ -1,0 +1,153 @@
+/* Общие стили */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #9894999d; /* Тёмный фон */
+  color: #ffffff; /* Белый текст */
+}
+
+/* Контейнер страницы оформления */
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #9894999d; /* Тёмно-серый фон */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок страницы */
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Контейнер для информации об оформлении заказа */
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Стили для блока с информацией о заказе */
+.order-summary {
+  flex: 1;
+  background-color: #9894999d; /* Тёмно-синий фон */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+/* Стили для блока с формой оформления */
+.checkout-form {
+  flex: 1.5;
+  background-color: #9894999d; /* Тёмно-синий фон */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+/* Стили для каждого товара в заказе */
+.order-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Стили для изображения товара */
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Стили для общей суммы заказа */
+.order-total {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff;
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Стили для формы ввода данных */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Стили для меток в форме */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Стили для полей ввода */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #9894999d;
+  color: #ffffff;
+}
+
+/* Стили для кнопки отправки формы */
+.submit-order {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-order:hover {
+  background-color: #27ae60;
+}
+
+/* Стили для сообщений об ошибках */
+.error-message {
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e74c3c;
+  border-radius: 4px;
+}
+
+.error-message ul {
+  margin: 5px 0 0 20px;
+}
+
+/* Стили для успешного сообщения */
+.success-message {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #2ecc71;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.success-message h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
