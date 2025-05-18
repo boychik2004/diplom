@@ -4,13 +4,46 @@ $pageTitle = "SportStyle - Будь в движении!";
 include 'header.php';
 ?>
 <main>
+
+    <!-- Блок с баннерами брендов -->
+    <section class="brands-section">
+        <h2>Наши партнёры и любимые бренды</h2>
+        <p class="brands-subtitle">Мы работаем только с проверенными и качественными производителями спортивной обуви.</p>
+
+        <!-- Список брендов с текстом под каждым -->
+        <div class="brands-list">
+            <div class="brand-item">
+                <img src="images/brand-nike.png" alt="Nike">
+                <p><strong>Nike</strong> — лидер в мире спортивных технологий. Известна своими инновационными решениями и стильным дизайном.</p>
+            </div>
+            <div class="brand-item">
+                <img src="images/brand-adidas.png" alt="Adidas">
+                <p><strong>Adidas</strong> — сочетает спорт и моду, предлагая комфортную обувь как для тренировок, так и для повседневной носки.</p>
+            </div>
+            <div class="brand-item">
+                <img src="images/brand-puma.png" alt="Puma">
+                <p><strong>Puma</strong> — воплощение стиля и скорости. Отличный выбор для тех, кто следит за модой и активно проводит время.</p>
+            </div>
+            <div class="brand-item">
+                <img src="images/brand-reebok.png" alt="Reebok">
+                <p><strong>Reebok</strong> — фокус на функциональности и здоровом образе жизни. Подходит для силовых и кардио тренировок.</p>
+            </div>
+            <div class="brand-item">
+                <img src="images/brand-newbalance.png" alt="New Balance">
+                <p><strong>New Balance</strong> — эталон комфорта и анатомической поддержки. Идеальны для длительного ношения и прогулок.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной блок с описанием каталога -->
     <section class="catalog-preview">
         <h2>Наш каталог – ваш идеальный выбор для активной жизни!</h2>
         <p class="subtitle">Мы предлагаем обувь, которая подойдет для любых целей и стилей.</p>
 
+        <!-- Слайдер фич -->
         <div class="features-slider">
             <div class="feature-arrow prev">&#10094;</div>
-            
+
             <div class="features-container">
                 <div class="feature-item active">
                     <h3>Легкие беговые кроссовки</h3>
@@ -36,6 +69,7 @@ include 'header.php';
 
             <div class="feature-arrow next">&#10095;</div>
 
+            <!-- Навигация по слайдам -->
             <div class="feature-nav">
                 <span class="feature-dot active"></span>
                 <span class="feature-dot"></span>
@@ -49,5 +83,7 @@ include 'header.php';
     </section>
 </main>
 
+<!-- Подключение скриптов -->
 <script src="script.js" defer></script>
+
 <?php include 'footer.php'; ?>
