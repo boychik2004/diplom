@@ -1,8 +1,9 @@
 <?php
 session_start();
-
 // Подключение к базе данных
 include 'db_connect.php';
+
+$error = ''; // Инициализируем переменную ошибки
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
@@ -26,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -50,18 +50,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-container">
                 <form method="post" class="auth-form">
                     <h2>Вход в аккаунт</h2>
-                    <?php if (isset($error)): ?>
-                        <p style="color:red;"><?= $error ?></p>
+                    <?php if (!empty($error)): ?>
+                        <p style="color:red;"><?= htmlspecialchars($error) ?></p>
                     <?php endif; ?>
+
                     <label for="username">Имя пользователя:</label>
                     <input type="text" id="username" name="username" required>
+
                     <label for="password">Пароль:</label>
                     <input type="password" id="password" name="password" required>
-                    <button type="submit" name="login" class="btn">Войти</button>
-                </form>
 
-                <form action="register.php" method="get" class="auth-form">
-                    <button type="submit" class="btn">Зарегистрироваться</button>
+                    <!-- Блок с двумя кнопками -->
+                    <div class="button-container">
+                        <button type="submit" name="login" class="btn">Войти</button>
+                        <a href="register.php" class="btn">Зарегистрироваться</a>
+                    </div>
                 </form>
             </div>
         </section>
