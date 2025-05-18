@@ -1,5 +1,6 @@
 /* Общие стили */
 body {
+  background-image: url('images/bg.png');
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
