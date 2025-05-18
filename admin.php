@@ -15,7 +15,7 @@ $host = '127.0.0.1';
 $port = '3308';
 $dbname = 'alexis222w_shoes';
 $username = 'alexis222w_shoes';
-$password = 'G2V4PB4P5k*AZW3D';
+
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
