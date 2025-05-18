@@ -32,12 +32,92 @@
   background-color: #37cc77;
 }
 
-/* Карточки товара (основная часть) */
+/* Контейнеры */
+.catalog-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  width: 250px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Двойной ползунок */
+.range-slider {
+  padding: 10px 0;
+  font-size: 0.95rem;
+}
+
+.range-slider .sliders {
+  position: relative;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.range-slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  height: 8px;
+  background: transparent;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #42ff91;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #42ff91;
+  border: none;
+  cursor: pointer;
+}
+
+/* Товары */
 .product-list {
-  flex: 1; /* Занимает оставшееся пространство */
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Отступ между карточками */
+  gap: 20px;
   padding: 20px;
 }
 
@@ -46,13 +126,14 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: calc(25% - 15px); /* 4 карточки в ряд (25% ширины минус отступы) */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 10px; /* Внутренний отступ */
+  width: calc(25% - 15px);
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Равномерное распределение содержимого */
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-item:hover {
@@ -62,77 +143,58 @@
 
 .product-item img {
   width: 100%;
-  height: 200px; /* Увеличиваем высоту изображения */
-  object-fit: cover; /* Обрезаем изображение, чтобы оно заполняло контейнер */
-  border-radius: 10px 10px 0 0; /* Скругление углов только сверху */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .product-item h2 {
-  font-size: 0.9rem; /* Размер заголовка */
+  font-size: 1rem;
   margin: 10px 0;
   color: #333;
-  flex-grow: 1; /* Заголовок занимает доступное пространство */
 }
 
 .product-item p {
-  font-size: 0.8rem; /* Размер текста */
+  font-size: 0.85rem;
   color: #666;
-  padding: 0 10px;
   margin: 0;
-  flex-grow: 1; /* Описание занимает доступное пространство */
 }
 
 .product-item .price {
-  font-size: 0.9rem; /* Размер цены */
-  color: #000000;
+  font-size: 1rem;
+  color: #000;
   font-weight: bold;
   margin: 10px 0;
 }
 
-/* Стили для кнопок в карточке */
 .actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 
 .actions .btn {
-  width: 60%;
-  padding: 8px 15px;
-  font-size: 0.8rem;
+  width: 80%;
+  padding: 10px 15px;
+  font-size: 0.9rem;
   background-color: #42ff91;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .actions .btn:hover {
   background-color: #37cc77;
 }
 
-.add-to-cart-btn {
-  background-color: #42ff91;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-cart-btn:hover {
-  background-color: #37cc77;
-}
-
-/* Адаптивность */
+/* Адаптив */
 @media (max-width: 1024px) {
   .product-item {
-    width: calc(33.333% - 15px); /* 3 карточки в ряд на планшетах */
+    width: calc(33.333% - 15px);
   }
 }
 
@@ -147,33 +209,105 @@
   }
 
   .product-item {
-    width: calc(50% - 15px); /* 2 карточки в ряд на мобильных */
+    width: calc(50% - 15px);
   }
 }
 
 @media (max-width: 480px) {
   .product-item {
-    width: 100%; /* 1 карточка в ряд на очень маленьких экранах */
+    width: 100%;
   }
 }
-.product-item img {
+.wrapper {
   width: 100%;
-  height: 250px; /* Еще больше высота */
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-/* Стили для кнопки "Аккаунт" */
-.navbar .login-btn {
-  padding: 10px 20px; /* Внутренние отступы */
-  background-color: #42ff91; /* Цвет фона */
-  color: white; /* Цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  border-radius: 5px; /* Скругленные углы */
-  display: inline-block; /* Для выравнивания кнопок рядом */
-  transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
-/* Эффект при наведении для кнопки "Аккаунт" */
-.navbar .login-btn:hover {
-  background-color: #37cc77; /* Цвет фона при наведении */
+.price-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  gap: 10px;
+}
+
+.price-input .field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.price-input .field span {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.price-input .field input {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.separator {
+  width: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 18px;
+}
+
+.slider {
+  height: 5px;
+  position: relative;
+  background: #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.slider .progress {
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: #42ff91;
+}
+
+.range-input {
+  position: relative;
+  height: 20px;
+}
+
+.range-input input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 1;
+}
+
+.range-input input[type="range"]::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #42ff91;
+  pointer-events: all;
+  -webkit-appearance: none;
+  z-index: 2;
+  margin-top: -6px;
+}
+
+.range-input input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #42ff91;
+  pointer-events: all;
+  z-index: 2;
 }
