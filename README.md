@@ -16,4 +16,8 @@
 - **Backend:** PHP
 - **СУБД:** MySQL + phpMyAdmin
 
+## 📃 ERD-дииограмма
+![22](https://github.com/user-attachments/assets/8391a20d-a0b4-4baf-9f77-95292787ee5e)
+
+
 
