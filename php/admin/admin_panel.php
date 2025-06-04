@@ -7,12 +7,8 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     exit;
 }
 
-// Подключение к базе данных
-$host = '127.0.0.1';
-$port = '3308';
-$dbname = 'alexis222w_shoes';
-$username = 'alexis222w_shoes';
-$password = 'UHABHc8Z9Y6F8X#2';
+// Подключаем БД
+require_once 'config/database.php'; // ← Теперь $pdo доступен отсюда
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -110,7 +106,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Админ-панель - Управление товарами</title>
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="css/admin_style.css">
 </head>
 <body>
     <div class="admin-header">

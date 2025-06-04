@@ -8,7 +8,7 @@ include 'header.php';
 <head>
     <meta charset="UTF-8">
     <title><?= $pageTitle ?></title>
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="css/catalog.css">
 </head>
 <body>
     <main>

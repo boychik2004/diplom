@@ -7,12 +7,8 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $productId = intval($_GET['id']);
 $pageTitle = "Страница товара";
 
-// Подключение к БД
-$host = '127.0.0.1';
-$port = '3308';
-$dbname = 'alexis222w_shoes';
-$username = 'alexis222w_shoes';
-$password = 'UHABHc8Z9Y6F8X#2';
+// Подключаем БД
+require_once 'config/database.php'; // ← Теперь $pdo доступен отсюда
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -75,7 +71,7 @@ include 'header.php';
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($pageTitle) ?></title>
-    <link rel="stylesheet" href="tovar.css">
+    <link rel="stylesheet" href="css/tovar.css">
 </head>
 <body>
 

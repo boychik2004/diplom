@@ -29,7 +29,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>Избранное</title>
-    <link rel="stylesheet" href="wishlist.css">
+    <link rel="stylesheet" href="css/wishlist.css">
 </head>
 <body>
 <?php include 'header.php'; ?>

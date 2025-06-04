@@ -9,12 +9,8 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 $pageTitle = "Редактировать товар";
 include 'header.php';
 
-// Подключение к базе данных
-$host = '127.0.0.1';
-$port = '3308';
-$dbname = 'alexis222w_shoes';
-$username = 'alexis222w_shoes';
-$password = 'UHABHc8Z9Y6F8X#2';
+// Подключаем БД
+require_once 'config/database.php'; // ← Теперь $pdo доступен отсюда
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -123,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?></title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/admin.css">
     <style>
         .size-checkboxes {
             display: flex;

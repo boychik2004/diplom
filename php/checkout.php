@@ -9,12 +9,8 @@ if (empty($_SESSION['cart'])) {
 $pageTitle = "Оформление заказа";
 include 'header.php';
 
-// Подключение к базе данных
-$host = '127.0.0.1';
-$port = '3308';
-$dbname = 'alexis222w_shoes';
-$username = 'alexis222w_shoes';
-$password = 'UHABHc8Z9Y6F8X#2';
+// Подключаем БД
+require_once 'config/database.php'; // ← Теперь $pdo доступен отсюда
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -77,7 +73,7 @@ $finalPrice = $totalPrice - ($totalPrice * ($discountPercent / 100));
 <head>
     <meta charset="UTF-8">
     <title>Оформление заказа</title>
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
 
