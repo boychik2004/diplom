@@ -25,7 +25,7 @@
 
 ## 1. Таблица users — пользователи
 Содержит данные о пользователях (имя, email, пароль, дата регистрации).
-
+```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
