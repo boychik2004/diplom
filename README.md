@@ -14,6 +14,6 @@
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP
-- **База данных:** MySQL
-- **Фреймворки:** PhpMyAdmin
+- **СУБД:** MySQL + phpMyAdmin
+
 
