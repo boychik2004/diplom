@@ -110,3 +110,23 @@ CREATE TABLE wishlist (
     PRIMARY KEY (user_id, product_id)
 );
 ```
+
+## Добавление товара в корзину 
+```sql
+<h2><?= htmlspecialchars($product['name']) ?></h2>
+<p><?= nl2br(htmlspecialchars($product['description'])) ?></p>
+<p><strong>Цена:</strong> <?= number_format($product['price'], 2, ',', ' ') ?> ₽</p>
+
+<input type="number" class="quantity-input" value="1" min="1">
+<select id="size-select">
+    <option value="">Выберите размер</option>
+    <?php foreach ($availableSizes as $size): ?>
+        <option value="<?= $size ?>"><?= $size ?></option>
+    <?php endforeach; ?>
+</select>
+
+<button id="addToCartBtn" data-product-id="<?= $product['id'] ?>">
+    Добавить в корзину
+</button>
+```
+# С помощью JavaScript, собираются данные о товаре: его идентификатор (через атрибут data-product-id), количество (из поля ввода) и размер (пользователь должен его выбрать). Перед добавлением проверяется, указан ли размер — если нет, выводится предупреждение
