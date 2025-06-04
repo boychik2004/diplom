@@ -1,0 +1,256 @@
+/* === Общие стили === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* === Информация о пользователе === */
+.user-info {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logout-btn {
+  background-color: #42ff91;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #37cc77;
+}
+
+.user-details {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.user-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* === История заказов === */
+.order-history {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.order-history h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* === Форма фильтрации === */
+.filter-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-form label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.filter-form select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* === Таблица заказов === */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.orders-table thead {
+  display: none;
+}
+
+.orders-table tbody tr td {
+  position: relative;
+  display: block;
+  padding: 12px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table tbody tr td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* === Статусы === */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status-pending { background-color: #f39c12; color: white; }
+.status-paid { background-color: #2ecc71; color: white; }
+.status-processing { background-color: #3498db; color: white; }
+.status-shipped { background-color: #9b59b6; color: white; }
+.status-delivered { background-color: #1abc9c; color: white; }
+.status-cancelled { background-color: #e74c3c; color: white; }
+
+/* === Кнопка удаления === */
+.delete-form {
+  margin-top: 10px;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+/* === Заказ === */
+.order-block {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.order-header h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.order-header .status {
+  margin-right: 10px;
+}
+
+.order-header form {
+  margin-top: 10px;
+}
+
+.order-total {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* === Адаптивность === */
+@media screen and (min-width: 768px) {
+  .orders-table thead {
+    display: table-header-group;
+  }
+
+  .orders-table tbody tr td {
+    display: table-cell;
+    position: static;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .orders-table tbody tr td::before {
+    display: none;
+  }
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-header form {
+    margin: 0;
+  }
+
+  .user-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .orders-table tbody tr td {
+    padding: 10px 10px 10px 100px;
+  }
+
+  .order-header h3 {
+    font-size: 1rem;
+  }
+
+  .order-header .status {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .delete-form {
+    margin-top: 10px;
+  }
+
+  .delete-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .order-total {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
