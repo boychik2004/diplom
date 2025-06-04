@@ -110,8 +110,9 @@ CREATE TABLE wishlist (
     PRIMARY KEY (user_id, product_id)
 );
 ```
+## Частички кода 
 
-## Добавление товара в корзину 
+## 1. Добавление товара в корзину 
 ```sql
 <h2><?= htmlspecialchars($product['name']) ?></h2>
 <p><?= nl2br(htmlspecialchars($product['description'])) ?></p>
