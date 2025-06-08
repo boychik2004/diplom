@@ -1,2 +1,2 @@
 # Подключение 
-config/database.php
+config/db_connect.php
